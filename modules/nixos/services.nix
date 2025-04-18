@@ -5,6 +5,12 @@
   };
 
   services = {
+    cloudflare-warp.enable = true;
+
+    udev.packages = [
+      pkgs.android-udev-rules
+    ];
+
     redis = {
       enable = true;
       bind = "0.0.0.0";  # Listen on all interfaces (default: localhost)
@@ -56,7 +62,7 @@
       enable = true;
       enableTCPIP = true;
       port = 5432;
-      ensureDatabases = [ "postgres" "plobbo" ];
+      ensureDatabases = [ "postgres" "plobbo" "edulume" "myorbit" ];
       authentication = pkgs.lib.mkOverride 10 ''
         #type database  DBuser  auth-method
         local all       all     trust
@@ -91,6 +97,7 @@
     };
     variables = {EDITOR = "nvim";};
     systemPackages = with pkgs; [
+      android-studio
       linuxPackages.rtl88x2bu
       wpa_supplicant
       networkmanager

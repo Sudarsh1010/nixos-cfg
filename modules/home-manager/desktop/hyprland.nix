@@ -14,7 +14,7 @@
       "$LAPTOP_KB_ENABLED" = true;
 
       monitor = [
-        "eDP-1,1920x1080,auto,1"
+        "eDP-1,1920x1080@100,auto,1"
         ",preferred,auto,1"
       ];
 
@@ -26,6 +26,7 @@
       exec-once = [
         "waybar &"
         "waypaper --restore &"
+        "hyprpaper &"
       ];
 
       env = [
@@ -120,7 +121,7 @@
         natural_scroll = true;
 
         repeat_rate = 30;
-        repeat_delay = 300;
+        repeat_delay = 250;
 
         touchpad = {
           natural_scroll = true;
@@ -140,7 +141,6 @@
         "$mainMod, V, togglefloating, "
         "$mainMod, Space, exec, $menu"
         "$mainMod, P, pseudo, "
-        "$mainMod, J, togglesplit"
 
         "SUPER_SHIFT, R, exec, hyprctl reload"
         ", Print, exec, grimblast --notify copy area"
@@ -150,6 +150,11 @@
         "$mainMod SHIFT, L, movefocus, r"
         "$mainMod SHIFT, K, movefocus, u"
         "$mainMod SHIFT, J, movefocus, d"
+
+        "Super SHIFT, L, resizeactive, 10 0"
+        "Super SHIFT, H, resizeactive, -10 0"
+        "Super SHIFT, K, resizeactive, 0 -10"
+        "Super SHIFT, J, resizeactive, 0 10"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"

@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ../../modules/home-manager/packages.nix
 
@@ -33,6 +33,9 @@
     username = "sudarsh";
     homeDirectory = "/home/sudarsh";
     stateVersion = "24.11"; # Please read the comment before changing.
+    sessionVariables = {
+      JAVA_HOME = "${pkgs.jdk21}/lib/openjdk"; # Or jdk8/jdk21
+    };
   };
 
   programs.home-manager.enable = true;

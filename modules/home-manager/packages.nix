@@ -8,6 +8,10 @@
       newsflash
       (prismlauncher.override {jdks = [jdk8 jdk17 jdk21];})
       (discord.override { withVencord = true; })
+      jdk21
+      code-cursor
+      foot
+      watchman
       slack
       remmina
       nwg-displays
@@ -17,6 +21,7 @@
       bc
       stremio
       redis
+      postman
       waypaper
       brave
       firefox
